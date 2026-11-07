@@ -1,0 +1,236 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+
+:root {
+    --cherry: #5D0703;
+    --cream: #EEDCC8;
+    --paper: #F8EFE5;
+    --highlight: #E9C84A;
+    --muted: #936C5D;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    padding: 45px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--cream);
+    color: var(--cherry);
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.letter-card {
+    width: 100%;
+    max-width: 740px;
+    padding: 55px 65px;
+    background: var(--paper);
+    border: 1px solid rgba(93, 7, 3, 0.12);
+    border-radius: 5px;
+    box-shadow: 0 15px 45px rgba(93, 7, 3, 0.09);
+}
+
+.eyebrow,
+.small-note {
+    font-family: 'Playfair Display', serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    line-height: 1.8;
+    color: var(--muted);
+}
+
+.eyebrow {
+    margin-bottom: 32px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 5vw, 43px);
+    font-weight: 700;
+    line-height: 1.55;
+    margin-bottom: 28px;
+    color: var(--cherry);
+}
+
+.highlight {
+    display: table;
+    padding: 0 8px;
+    background: var(--highlight);
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}
+
+.letter-text {
+    font-size: 21px;
+    line-height: 1.65;
+    color: #38231F;
+}
+
+.letter-text p + p {
+    margin-top: 18px;
+}
+
+
+.photo-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 736 / 710;
+    margin: 35px 0;
+    padding: 8px;
+    background: none
+    overflow: hidden;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.photo-placeholder {
+    display: none;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--cream);
+    color: var(--cherry);
+    text-align: center;
+}
+
+.photo-placeholder span {
+    font-size: 42px;
+}
+
+.photo-placeholder p {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+}
+
+.photo-placeholder small {
+    font-size: 13px;
+}
+
+.question-section {
+    margin-top: 42px;
+    padding-top: 30px;
+    border-top: 1px solid #D8BCA6;
+    text-align: center;
+}
+
+.small-note {
+    margin-bottom: 14px;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(25px, 4vw, 35px);
+    line-height: 1.4;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+.question-description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+button {
+    min-width: 145px;
+    padding: 13px 22px;
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.25s, color 0.25s,
+                transform 0.25s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+button:focus-visible {
+    outline: 2px solid var(--cherry);
+    outline-offset: 4px;
+}
+
+.yes-button {
+    background: var(--cherry);
+    color: var(--cream);
+    border: 1px solid var(--cherry);
+}
+
+.yes-button:hover {
+    background: #7A1710;
+}
+
+.no-button {
+    background: transparent;
+    color: var(--cherry);
+    border: 1px solid #B99B89;
+}
+
+.no-button:hover {
+    background: var(--cream);
+}
+
+#response {
+    margin-top: 25px;
+    font-size: 19px;
+    line-height: 1.7;
+    color: var(--cherry);
+}
+
+.footer {
+    margin-top: 38px;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 18px 12px;
+        align-items: flex-start;
+    }
+
+    .letter-card {
+        padding: 32px 23px;
+    }
+
+    .eyebrow {
+        margin-bottom: 23px;
+    }
+
+    .letter-text {
+        font-size: 19px;
+        line-height: 1.6;
+    }
+
+    .photo-frame {
+        height: 240px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
